@@ -10,19 +10,13 @@ void setup() {
 }
 
 void loop() {
-  //forward
-  driveMotor(150);
-  delay(2000);
+  for (int speed = 0; speed <= 255; speed += 5) {
+    driveMotors(speed);
+    delay(50);
+  }
 
-  //brake
-  driveMotor(0);
-  delay(20);
-
-  //reverse
-  driveMotor(-150);
-  delay(2000);
-
-  //brake
-  driveMotor(0);
-  delay(20);
+  for (int speed = 255; speed >= 0; speed -= 5) {
+    driveMotors(speed);
+    delay(50);
+  }
 }
